@@ -1,1 +1,47 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --color-jumas-blue: #2d3e73;
+  --color-jumas-red: #ee3632;
+  --color-jumas-green: #228d43;
+  --color-jumas-yellow: #eeba32;
+  --color-jumas-white: #fefefe;
+  --color-glass-dark: rgba(35, 35, 35, 0.25);
+  --color-glass-stroke: rgba(54, 54, 54, 0.15);
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+:root {
+  color: var(--color-jumas-white);
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@layer components {
+  .column-system {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    min-height: 100dvh;
+    padding-block: 1.25rem;
+    padding-inline: 1rem;
+
+    @variant md {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 1.5rem;
+      padding: 2.5rem;
+    }
+
+    @variant lg {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+      padding-inline: 5rem;
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
