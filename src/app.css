@@ -19,28 +19,28 @@
   font-weight: 400;
 }
 
-@layer components {
-  .column-system {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    min-height: 100dvh;
-    padding-block: 1.25rem;
-    padding-inline: 1rem;
+@utility column-system {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  min-height: 100dvh;
+  padding-block: 1.25rem;
+  padding-inline: 1rem;
 
-    @variant md {
-      grid-template-columns: repeat(8, 1fr);
-      gap: 1.5rem;
-      padding: 2.5rem;
-    }
-
-    @variant lg {
-      grid-template-columns: repeat(12, 1fr);
-      gap: 2rem;
-      padding-inline: 5rem;
-    }
+  @variant md {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1.5rem;
+    padding: 2.5rem;
   }
 
+  @variant lg {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    padding-inline: 5rem;
+  }
+}
+
+@layer components {
   button {
     cursor: pointer;
   }
