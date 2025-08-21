@@ -41,6 +41,17 @@
 }
 
 @layer components {
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+
+    @variant md {
+      font-size: 4rem;
+    }
+  }
+
   button {
     cursor: pointer;
   }
