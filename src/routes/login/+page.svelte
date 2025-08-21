@@ -6,16 +6,25 @@
   import { draw, scale } from "svelte/transition";
   import { expoInOut } from "svelte/easing";
   import { goto } from "$app/navigation";
+  import { onMount } from "svelte";
 
   let { form }: PageProps = $props();
   let showTransition = $state(false);
   const transitionDuration = 1500;
+
+  $effect(() => {
+    if (form?.error) {
+      document.body.style.setProperty("--bg-color", "var(--color-jumas-red)");
+    }
+  });
+
+  onMount(() => {
+    document.body.style.setProperty("--bg-color", "var(--color-jumas-yellow)");
+  });
 </script>
 
 <section
   class="column-system items-center transition-colors duration-500 ease-in-out"
-  class:bg-jumas-red={form?.error}
-  class:bg-jumas-yellow={!form?.error}
 >
   <div class="col-span-full grid grid-cols-subgrid gap-y-14">
     <h2 class="title col-span-full">Acesse o capitalário</h2>

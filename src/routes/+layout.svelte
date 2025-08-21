@@ -10,11 +10,11 @@
   <link rel="icon" href={logo} />
 </svelte:head>
 
-<header class="absolute p-4 md:p-10 lg:px-20 w-full">
+<header class="relative p-4 md:p-10 lg:px-20">
   <ColorBand />
   <Logo />
 </header>
 
-<main class="size-full">
+<main>
   {@render children?.()}
 </main>

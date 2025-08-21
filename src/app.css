@@ -19,18 +19,26 @@
   font-weight: 400;
 }
 
+body {
+  display: grid;
+  background-color: var(--bg-color);
+  grid-template-rows: auto 1fr;
+  min-height: 100dvh;
+}
+
 @utility column-system {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  min-height: 100dvh;
-  padding-block: 1.25rem;
+  min-height: 100%;
+  padding-bottom: 1.25rem;
   padding-inline: 1rem;
 
   @variant md {
     grid-template-columns: repeat(8, 1fr);
     gap: 1.5rem;
     padding: 2.5rem;
+    padding-top: 0;
   }
 
   @variant lg {
