@@ -16,6 +16,6 @@
     {type}
     {name}
     {...restProps}
-    class="bg-glass-dark border-glass-stroke border-1 rounded-lg px-3 py-5 outline-none"
+    class="bg-glass-dark border-glass-stroke border rounded-lg px-3 py-5 outline-none"
   />
 </label>
