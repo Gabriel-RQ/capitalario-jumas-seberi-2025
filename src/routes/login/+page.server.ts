@@ -1,5 +1,6 @@
 import { createToken } from "$lib/server/auth";
 import { redirect } from "@sveltejs/kit";
+import { PRIVATE_ACCESS_PASSWORD } from "$env/static/private";
 
 export function load({ locals }) {
   if (locals.loggedIn) {
@@ -16,7 +17,7 @@ export const actions = {
       return { error: true, message: "Informe uma senha válida" };
     }
 
-    if (password !== "123456") {
+    if (password !== PRIVATE_ACCESS_PASSWORD) {
       return { error: true, message: "Senha incorreta" };
     }
 
