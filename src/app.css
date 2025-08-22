@@ -6,6 +6,7 @@
   --color-jumas-green: #228d43;
   --color-jumas-yellow: #eeba32;
   --color-jumas-white: #fefefe;
+  --color-glass: rgba(255, 255, 255, 0.05);
   --color-glass-dark: rgba(35, 35, 35, 0.25);
   --color-glass-stroke: rgba(54, 54, 54, 0.15);
   --font-montserrat: "Montserrat", sans-serif;
@@ -21,7 +22,7 @@
 
 body {
   display: grid;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, var(--color-jumas-blue));
   grid-template-rows: auto 1fr;
   min-height: 100dvh;
 }
