@@ -7,7 +7,10 @@ declare global {
       loggedIn: boolean;
     }
     // interface PageData {}
-    // interface PageState {}
+    interface PageState {
+      showModal: boolean;
+      heroId: string;
+    }
     // interface Platform {}
   }
 }
