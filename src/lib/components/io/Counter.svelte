@@ -1,21 +1,20 @@
 <script lang="ts">
-  import { PlusIcon } from "@lucide/svelte";
-  import { IconButton } from ".";
   import { scale } from "svelte/transition";
+  import type { Snippet } from "svelte";
 
   type CounterProps = {
     current: number;
     total: number;
     class?: string;
+    incrementButton: Snippet;
   };
 
-  let { current, total, class: className }: CounterProps = $props();
-
-  function increaseCounter() {
-    if (current < total) {
-      current++;
-    }
-  }
+  let {
+    current,
+    total,
+    class: className,
+    incrementButton,
+  }: CounterProps = $props();
 </script>
 
 <div class="flex flex-col items-center {className}">
@@ -29,9 +28,7 @@
       </span>
     {/key}
 
-    <IconButton onclick={increaseCounter}>
-      <PlusIcon />
-    </IconButton>
+    {@render incrementButton()}
   </div>
 
   <span class="col-span-full text-center">

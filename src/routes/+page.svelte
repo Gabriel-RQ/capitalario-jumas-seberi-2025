@@ -1,11 +1,21 @@
 <script lang="ts">
-  import { Counter, Link, List, ListItem, Modal } from "$lib/components";
+  import {
+    Counter,
+    IconButton,
+    Link,
+    List,
+    ListItem,
+    Modal,
+  } from "$lib/components";
   import { onMount } from "svelte";
   import { pushState } from "$app/navigation";
   import { page } from "$app/state";
   import bannerPozzobon from "$lib/assets/heroes/pozzobon.webp";
   import bannerEngling from "$lib/assets/heroes/engling.webp";
   import bannerReinisch from "$lib/assets/heroes/reinisch.webp";
+  import type { PageProps } from "./$types";
+  import { PlusIcon, RotateCwIcon } from "@lucide/svelte";
+  import { enhance } from "$app/forms";
 
   const heroes = [
     {
@@ -44,6 +54,10 @@
   onMount(() => {
     document.body.style.setProperty("--bg-color", "var(--color-jumas-blue)");
   });
+
+  let { data }: PageProps = $props();
+
+  let increasing = $state(false);
 </script>
 
 <section class="column-system grid-rows-[repeat(2,auto)_1fr]">
@@ -58,11 +72,30 @@
   </p>
 
   <div class="col-span-full grid grid-cols-subgrid items-center">
-    <Counter
-      current={0}
-      total={200}
+    <form
+      action="?/increment"
+      method="POST"
       class="col-span-full md:col-span-6 md:col-start-2 lg:col-span-6 lg:col-start-5"
-    />
+      use:enhance={() => {
+        return async ({ update }) => {
+          increasing = true;
+          await update();
+          increasing = false;
+        };
+      }}
+    >
+      <Counter current={data.counter} total={data.maxCounter}>
+        {#snippet incrementButton()}
+          <IconButton disabled={increasing}>
+            {#if increasing}
+              <RotateCwIcon class="animate-spin" />
+            {:else}
+              <PlusIcon />
+            {/if}
+          </IconButton>
+        {/snippet}
+      </Counter>
+    </form>
 
     <List
       title="Saiba mais"
