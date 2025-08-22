@@ -5,14 +5,17 @@
     href: string;
     text: string;
     type?: "external" | "internal";
+    variant?: "dark" | "light";
   };
 
-  let { href, type = "external", text }: LinkProps = $props();
+  let { href, type = "external", text, variant = "dark" }: LinkProps = $props();
 </script>
 
 <a
   {href}
-  class="bg-glass-dark border-glass-stroke border text-center rounded-md px-6 py-3 grid grid-cols-[1fr_auto] text-nowrap gap-4 min-w-max md:text-xl"
+  class="border-glass-stroke border text-center rounded-md px-6 py-3 grid grid-cols-[1fr_auto] text-nowrap gap-4 min-w-max md:text-xl"
+  class:bg-glass-dark={variant === "dark"}
+  class:bg-glass={variant === "light"}
   target={type === "external" ? "_blank" : "_self"}
   rel="noreferrer"
 >

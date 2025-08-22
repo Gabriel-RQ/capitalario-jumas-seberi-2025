@@ -3,14 +3,15 @@
 
   type ListItemProps = {
     description: string;
+    onclick?: () => void;
   };
 
-  let { description }: ListItemProps = $props();
+  let { description, onclick }: ListItemProps = $props();
 </script>
 
-<a
+<button
   class="bg-glass-dark py-3 px-2 inline-flex items-center justify-between gap-2 w-full rounded-lg hover:bg-glass focus:bg-glass transition-colors outline-none"
-  href="/"
+  {onclick}
 >
   <span
     class="p-2 bg-glass-dark rounded-md size-16 inline-flex items-center justify-center shrink-0"
@@ -23,4 +24,4 @@
   </span>
 
   <ChevronRightIcon class="size-12 shrink-0" />
-</a>
+</button>
