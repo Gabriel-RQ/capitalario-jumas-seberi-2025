@@ -28,6 +28,7 @@ export const actions = {
       httpOnly: true,
       sameSite: true,
       secure: true,
+      maxAge: 3600,
     });
     redirect(302, "/");
   },
