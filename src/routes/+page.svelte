@@ -14,7 +14,7 @@
   import bannerEngling from "$lib/assets/heroes/engling.webp";
   import bannerReinisch from "$lib/assets/heroes/reinisch.webp";
   import type { PageProps } from "./$types";
-  import { PlusIcon, RotateCwIcon } from "@lucide/svelte";
+  import { CheckIcon, PlusIcon, RotateCwIcon } from "@lucide/svelte";
   import { enhance } from "$app/forms";
 
   const heroes = [
@@ -57,7 +57,7 @@
 
   let { data }: PageProps = $props();
 
-  let increasing = $state(false);
+  let counterStatus: "default" | "increasing" | "done" = $state("default");
 </script>
 
 <section class="column-system grid-rows-[repeat(2,auto)_1fr]">
@@ -78,17 +78,22 @@
       class="col-span-full md:col-span-6 md:col-start-2 lg:col-span-6 lg:col-start-5"
       use:enhance={() => {
         return async ({ update }) => {
-          increasing = true;
+          counterStatus = "increasing";
           await update();
-          increasing = false;
+          counterStatus = "done";
+          setTimeout(() => {
+            counterStatus = "default";
+          }, 1500);
         };
       }}
     >
       <Counter current={data.counter} total={data.maxCounter}>
         {#snippet incrementButton()}
-          <IconButton disabled={increasing}>
-            {#if increasing}
+          <IconButton disabled={counterStatus !== "default"}>
+            {#if counterStatus === "increasing"}
               <RotateCwIcon class="animate-spin" />
+            {:else if counterStatus === "done"}
+              <CheckIcon />
             {:else}
               <PlusIcon />
             {/if}
