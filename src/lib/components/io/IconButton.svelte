@@ -15,7 +15,7 @@
 </script>
 
 <button
-  class="bg-glass border-glass border rounded-xl p-6 h-max hover:bg-glass-dark focus:bg-glass-dark transition-colors outline-none"
+  class="bg-glass border-glass border rounded-xl p-6 h-max hover:bg-glass-dark focus:bg-glass-dark transition-colors outline-none disabled:opacity-50"
   {disabled}
   {onclick}
 >
