@@ -21,11 +21,11 @@ export async function load({ locals }) {
 
 export const actions = {
   increment: async () => {
-    const max = await getMaxCounter();
-    const counter = await getCounter();
+    // const max = await getMaxCounter();
+    // const counter = await getCounter();
 
-    if (counter < max) {
-      await incrementCounter();
-    }
+    // if (counter < max) {
+    await incrementCounter();
+    // }
   },
 };
