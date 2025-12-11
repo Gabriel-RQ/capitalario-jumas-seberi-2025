@@ -83,7 +83,7 @@
           counterStatus = "done";
           setTimeout(() => {
             counterStatus = "default";
-          }, 1500);
+          }, 300);
         };
       }}
     >
