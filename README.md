@@ -29,9 +29,9 @@ Pense nos Capitais de Graça como um **"tesouro espiritual"**. Eles são:
 
 Tudo isso você oferece à Maria, que transforma em graças e as distribui do Santuário para quem mais precisa. É uma forma linda de contribuir e fazer a diferença!
 
-## 🎯 A Conquista do Ano
+## 🎯 A Conquista do Ano: Nosso Grande Objetivo!
 
-Todo ano, o Jumas Seberi define uma **conquista** especial, que buscamos alcançar por meio de uma meta de Capitais de Graça. Essa conquista é o nosso grande objetivo para o ano, e pode ser qualquer coisa com um significado espiritual profundo para o nosso momento.
+Todo ano, o Jumas Seberi define uma **conquista** especial. Essa conquista é o nosso grande objetivo para o ano, e pode ser qualquer coisa com um significado espiritual profundo para o nosso momento.
 
 ## 🎨 Design
 
